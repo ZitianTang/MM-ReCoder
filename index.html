@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="MM-ReCoder: Advancing Chart-to-Code Generation with Reinforcement Learning and Self-Correction">
+  <meta property="og:title" content="MM-ReCoder: Advancing Chart-to-Code Generation with Reinforcement Learning and Self-Correction"/>
+  <meta property="og:description" content="MM-ReCoder: Advancing Chart-to-Code Generation with Reinforcement Learning and Self-Correction"/>
+  <meta property="og:url" content=""/>
+  <meta property="og:image" content="static/images/teaser.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <meta name="twitter:title" content="MM-ReCoder">
+  <meta name="twitter:description" content="Chart-to-Code Generation with Reinforcement Learning and Self-Correction">
+  <meta name="twitter:image" content="static/images/teaser.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="chart-to-code, reinforcement learning, self-correction, multimodal LLM, code generation, CVPR 2026">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MM-ReCoder</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-widescreen">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title"><a href="https://cvpr.thecvf.com/Conferences/2026" target="_blank">CVPR 2026</a></h1>
+            <h1 class="title is-2 publication-title">MM-ReCoder: Advancing Chart-to-Code Generation with Reinforcement Learning and Self-Correction</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://zitiantang.github.io/" target="_blank">Zitian Tang</a>,&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="https://xu-zhang-1987.github.io/" target="_blank">Xu Zhang</a>,&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=B1EhbCsAAAAJ&hl=en" target="_blank">Jianbo Yuan</a>,&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="https://yzou2.github.io/" target="_blank">Yang Zou</a>,&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=b3UwPxUAAAAJ&hl=en" target="_blank">Varad Gunjal</a>,&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="https://www.songyaojiang.com/" target="_blank">Songyao Jiang</a>,&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="https://davidemodolo.wordpress.com/" target="_blank">Davide Modolo</a>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Amazon AGI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              <span class="author-block">Brown University</span>
+            </div>
+
+            <!-- ArXiv abstract Link -->
+            <span class="link-block">
+              <a class="external-link button is-normal is-rounded is-dark" style="cursor: default;">
+              <span class="icon">
+                <i class="ai ai-arxiv"></i>
+              </span>
+              <span>arXiv (Coming Soon)</span>
+            </a>
+          </span>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Multimodal Large Language Models (MLLMs) have recently demonstrated promising capabilities in multimodal coding tasks such as chart-to-code generation.
+            However, existing methods primarily rely on supervised finetuning (SFT), which requires the model to learn code patterns through chart-code pairs but does not expose the model to a code execution environment.
+            Moreover, while self-correction through execution feedback offers a potential route to improve coding quality, even state-of-the-art MLLMs have been shown to struggle with effective self-correction.
+            In this work, we introduce <b>MM-ReCoder</b>, a chart-to-code generation model trained with reinforcement learning (RL) and equipped with self-correction ability.
+            We propose a two-stage multi-turn self-correction RL strategy based on Group Relative Policy Optimization (GRPO).
+            The first stage enhances the model's self-correction ability via rolling out a shared first turn, while the second stage improves the coding capability with full-trajectory optimization.
+            MM-ReCoder learns to produce more accurate and executable code through the interaction with the environment and by iteratively correcting its own outputs.
+            Our results on three chart-to-code benchmarks demonstrate the state-of-the-art performance of MM-ReCoder.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Motivation -->
+<section class="hero is-small">
+  <div class="hero-body" style="font-size: large;">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3" style="width: 100%; margin: 0 auto;">Motivation</h2>
+      <br>
+      <p style="text-align: justify; width: 90%; margin: 0 auto;">
+        Scientific charts play a crucial role in helping humans interpret complex information by highlighting trends, relationships, and comparisons.
+        Being able to automatically generate the source code of a chart from its image makes it easy to edit, reproduce, and reuse visualizations.
+        However, existing chart-to-code approaches treat the problem as a one-shot generation task — generating code in a single pass without executing or refining based on feedback from rendered results.
+        While humans naturally operate iteratively (implement → execute → visualize → refine), current models do not replicate this self-correcting process.
+        <br><br>
+        We reveal that existing open-source MLLMs struggle to self-correct on multimodal coding tasks.
+        Although scores on evaluation benchmarks appear to improve between turns, <b>gains mainly come from increased code executability, not from refining already-executable code</b>.
+        When filtering for charts that successfully render in both turns, existing models show <em>negative</em> improvement — whereas our model, MM-ReCoder, achieves positive improvement.
+      </p>
+      <br>
+      <img src="static/images/teaser.png" alt="Motivation: self-correction analysis" style="width: 90%; height: auto; display: block; margin: 0 auto;"/>
+    </div>
+  </div>
+</section>
+<!-- End Motivation -->
+<hr>
+
+<!-- Method -->
+<section class="hero is-small">
+  <div class="hero-body" style="font-size: large;">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3" style="width: 100%; margin: 0 auto;">MM-ReCoder</h2>
+      <br>
+      <p style="text-align: justify; width: 90%; margin: 0 auto;">
+        We propose <b>MM-ReCoder</b>, trained with a <b>cold start</b> phase followed by a <b>two-stage multi-turn self-correction RL</b> strategy.
+      </p>
+      <br>
+
+      <img src="static/images/pipeline.png" alt="MM-ReCoder training pipeline" style="width: 90%; height: auto; display: block; margin: 0 auto;"/>
+
+      <br>
+      <h3 class="title is-4" style="width: 90%; margin: 0 auto;">Cold Start</h3>
+      <br>
+      <p style="text-align: justify; width: 90%; margin: 0 auto;">
+        We first perform SFT on 160k chart-code pairs (Chart2Code-160k) to build basic coding capability.
+        We then construct 7k two-turn self-correction conversations using Qwen3-VL-235B-A22B-Instruct and perform a second round of SFT to initialize self-correction behavior.
+      </p>
+      <br>
+
+      <h3 class="title is-4" style="width: 90%; margin: 0 auto;">Two-Stage Multi-Turn Self-Correction RL</h3>
+      <br>
+      <p style="text-align: justify; width: 90%; margin: 0 auto;">
+        We use Group Relative Policy Optimization (GRPO) in two stages:
+        <br><br>
+        &bull; <b>Stage 1 — Shared First Turn:</b> Fix an online-sampled first-turn output and roll out multiple second-turn candidates. This allows the model to explore diverse refinement strategies and directly trains self-correction capability.
+        <br><br>
+        &bull; <b>Stage 2 — Full Trajectory:</b> Jointly optimize both turns end-to-end, with rewards computed at the final turn.
+      </p>
+      <br>
+
+      <h3 class="title is-4" style="width: 90%; margin: 0 auto;">Reward Design</h3>
+      <br>
+      <p style="text-align: justify; width: 90%; margin: 0 auto;">
+        We combine three reward signals:
+        <br><br>
+        &bull; <b>Rule-based Reward:</b> Hooks into Matplotlib to extract chart elements (type, text, colors, layout) and computes an F1-based similarity score against the reference chart.
+        <br><br>
+        &bull; <b>Model-based Reward:</b> Uses Qwen2.5-VL-72B to evaluate six aspects — chart type, layout, text, data, style.
+        <br><br>
+        &bull; <b>Format Reward:</b> Checks that the output follows the required <code>&lt;think&gt;...&lt;/think&gt;'''python...'''</code> structure.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- End Method -->
+<hr>
+
+<!-- Experiments -->
+<section class="hero is-small">
+  <div class="hero-body" style="font-size: large;">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3" style="width: 100%; margin: 0 auto;">Experiments</h2>
+      <br>
+
+      <h3 class="title is-4" style="width: 90%; margin: 0 auto;">Main Results</h3>
+      <br>
+      <p style="text-align: justify; width: 90%; margin: 0 auto;">
+        We evaluate MM-ReCoder on three benchmarks: ChartMimic, Plot2Code, and ChartX.
+        Compared to its base model (Qwen2.5-VL-7B), MM-ReCoder improves execution rate by +22%, low-level score by +27%, and high-level score by +24%.
+        Moreover, MM-ReCoder not only significantly outperforms chart-domain specialist models and models of comparable size, but also achieves the best ChartMimic low-level score and Plot2Code text-match score among all models, surpassing GPT-4o and Qwen3-VL-235B-A22B.
+      </p>
+      <br>
+      <img src="static/images/main_results.png" alt="Main quantitative results" style="width: 90%; height: auto; display: block; margin: 0 auto;"/>
+      <br>
+
+      <h3 class="title is-4" style="width: 90%; margin: 0 auto;">Self-Correction Analysis</h3>
+      <br>
+      <p style="text-align: justify; width: 90%; margin: 0 auto;">
+        When evaluating only on charts that successfully render in both turns, MM-ReCoder achieves a +0.30% low-level score improvement and +0.89% high-level score improvement.
+        In contrast, existing models, especially models of comparable size, show negative improvement in this setting.
+
+      </p>
+      <br>
+      <img src="static/images/self_correction_analysis.png" alt="Self-correction analysis" style="width: 70%; height: auto; display: block; margin: 0 auto;"/>
+      <br>
+
+      <h3 class="title is-4" style="width: 90%; margin: 0 auto;">Human Evaluation</h3>
+      <br>
+      <p style="text-align: justify; width: 90%; margin: 0 auto;">
+        In A/B testing, MM-ReCoder wins against ChartCoder (37% Win / 43% Tie / 20% Loss) and Qwen2.5-VL-72B (40% Win / 37% Tie / 23% Loss).
+        Among samples with score improvements, 76.5% show visually discernible improvements as judged by humans.
+
+      </p>
+      <img src="static/images/human_eval.png" alt="Human evaluation results" style="width: 70%; height: auto; display: block; margin: 0 auto;"/>
+    </div>
+  </div>
+</section>
+<!-- End Experiments -->
+<hr>
+
+<!-- Qualitative Results -->
+<section class="hero is-small">
+  <div class="hero-body" style="font-size: large;">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3" style="width: 100%; margin: 0 auto;">Qualitative Results</h2>
+      <br>
+      <h3 class="title is-4" style="width: 90%; margin: 0 auto;">Examples of Self-correction</h3>
+      <br>
+      <p style="text-align: justify; width: 90%; margin: 0 auto;">
+        MM-ReCoder successfully corrects a wide range of chart rendering issues, including label placement, axis ranges, color mismatches, and style inconsistencies.
+
+      </p>
+      <br>
+
+      <!-- Thumbnail selector -->
+      <div style="display: flex; justify-content: center; align-items: center; gap: 10px; width: 90%; margin: 0 auto; flex-wrap: nowrap;">
+        <img src="static/images/thumbnail/thumbnail_1.png" class="qual-thumb qual-thumb-active" data-index="1"
+          style="height: 120px; width: auto; cursor: pointer; border: 3px solid #333; border-radius: 4px; object-fit: cover;"/>
+        <img src="static/images/thumbnail/thumbnail_2.png" class="qual-thumb" data-index="2"
+          style="height: 120px; width: auto; cursor: pointer; border: 3px solid transparent; border-radius: 4px; object-fit: cover;"/>
+        <img src="static/images/thumbnail/thumbnail_3.png" class="qual-thumb" data-index="3"
+          style="height: 120px; width: auto; cursor: pointer; border: 3px solid transparent; border-radius: 4px; object-fit: cover;"/>
+        <img src="static/images/thumbnail/thumbnail_4.png" class="qual-thumb" data-index="4"
+          style="height: 120px; width: auto; cursor: pointer; border: 3px solid transparent; border-radius: 4px; object-fit: cover;"/>
+        <img src="static/images/thumbnail/thumbnail_5.png" class="qual-thumb" data-index="5"
+          style="height: 120px; width: auto; cursor: pointer; border: 3px solid transparent; border-radius: 4px; object-fit: cover;"/>
+        <img src="static/images/thumbnail/thumbnail_6.png" class="qual-thumb" data-index="6"
+          style="height: 120px; width: auto; cursor: pointer; border: 3px solid transparent; border-radius: 4px; object-fit: cover;"/>
+        <img src="static/images/thumbnail/thumbnail_7.png" class="qual-thumb" data-index="7"
+          style="height: 120px; width: auto; cursor: pointer; border: 3px solid transparent; border-radius: 4px; object-fit: cover;"/>
+      </div>
+      <br>
+
+      <!-- Large qualitative image display -->
+      <img id="qual-display" src="static/images/qualitative/qualitative_1.png"
+        style="width: 100%; height: auto; display: block; margin: 0 auto;"/>
+
+      <br>
+      <h3 class="title is-4" style="width: 90%; margin: 0 auto;">Comparison with Other Models</h3>
+      <br>
+      <p style="text-align: justify; width: 90%; margin: 0 auto;">
+        MM-ReCoder achieves superior color, text, and style accuracy compared with ChartCoder, Qwen3-VL-235B, and GPT-4o across diverse chart types.
+
+      </p>
+      <br>
+      <img src="static/images/qualitative_comparison.png" alt="Comparison with other models" style="width: 100%; height: auto; display: block; margin: 0 auto;"/>
+    </div>
+  </div>
+</section>
+
+<style>
+  .qual-thumb-active {
+    border-color: #333 !important;
+    opacity: 1;
+  }
+  .qual-thumb:not(.qual-thumb-active) {
+    opacity: 0.6;
+  }
+  .qual-thumb:hover {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.qual-thumb').forEach(function(thumb) {
+    thumb.addEventListener('click', function() {
+      document.querySelectorAll('.qual-thumb').forEach(function(t) {
+        t.classList.remove('qual-thumb-active');
+        t.style.borderColor = 'transparent';
+      });
+      this.classList.add('qual-thumb-active');
+      this.style.borderColor = '#333';
+      document.getElementById('qual-display').src =
+        'static/images/qualitative/qualitative_' + this.dataset.index + '.png';
+    });
+  });
+</script>
+<!-- End Qualitative Results -->
+<hr>
+
+<!-- BibTeX -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-widescreen">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{tang2026mmrecoder,
+    title={MM-ReCoder: Advancing Chart-to-Code Generation with Reinforcement Learning and Self-Correction},
+    author={Zitian Tang and Xu Zhang and Jianbo Yuan and Yang Zou and Varad Gunjal and Songyao Jiang and Davide Modolo},
+    booktitle={CVPR},
+    year={2026}
+}
+    </code></pre>
+  </div>
+</section>
+<!-- End BibTeX -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
